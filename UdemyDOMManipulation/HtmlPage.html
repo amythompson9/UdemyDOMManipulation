@@ -7,10 +7,9 @@
 </head>
 <body>
     <!-- DOM Manipulation
-        
-        different ways of
-        
-        changing an element's style
+
+        **changing an element's style
+        these are ways to manipulate an element's style - selection and then manipulate
 
         -select
         var tag = document.getElementById("highlight");
@@ -19,11 +18,79 @@
         tag.style.color = "blue";
         tag.style.border = "10px solid red";
         tag.style.frontSize = "70px";
+        tag.style.background = "yellow";
+        tag.style.marginTop = "200px";
 
-        adding/removing clases
-        changing the content of a tag
-        changin attributes(src, href, etc.)
-        
+        ***Separation of concerns***
+        Is this a bad idea?
+        It is recommeneded for styles to be defined in a separate
+        file or files
+        The style property allows for quick styling
+        for example: testing purposes
+        Separate - structure, behavior, presentation
+        different ways of
+
+        --Here's an alternative--
+        rather than directly manipulating style
+        with JS, we can define a CSS class and then toggle
+        it o nor off with JS
+
+        use ADD, REMOVE, TOGGLE
+
+        **adding/removing clases
+        **changing the content of a tag
+        **changin attributes(src, href, etc.)
+
+        --textContent--
+        returns a string of all the text contained in a
+        given element
+
+        <p>
+        This is an <strong>awesome</strong> paragraph
+        </p>
+
+        here's what you do
+        Select the <p> tag
+        var tag = document.querySelector("p");
+
+        retrieve the textContent
+        tag.textContent
+
+        alter the textContent
+        tag.textContent = "blah";
+
+        --innerHTML--
+        similar to textContent, except it returns a string
+        of all the HTML contained in a given element
+
+        <p>
+        This is an <strong>awesome</strong> paragraph
+        </p>
+
+        Select the <p> tag
+        var tag = document.querySelector("p");
+
+        tag.innerHTML
+        This is an <strong>awesome</strong> paragraph
+
+        --Attributes--
+        use getAttribute() and setAttribute() to read and
+        write attributes like src or href
+
+        <a href="www.google.com">I am a link</a>
+        <img src="log.png">
+
+        var link = document.querySelector("a");
+        link.getAttribute("href"); this is the google link
+        - now change the attribute -
+        link.setAttribute("href", "www.dogs.com");
+        - <a href="www.dogs.com">I am a link</a>
+
+        - to change the image source - 
+        var img = document.querySelector("img");
+        img.setAttribute("src", "corgi.png");
+         - <img src="corgi.png"> - 
+
         -->
 </body>
 </html>
